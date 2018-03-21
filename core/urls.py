@@ -7,5 +7,5 @@ app_name = 'core'
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url('^faq/$', views.faq, name='faq'),
-
+    
 ]

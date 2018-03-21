@@ -6,9 +6,21 @@
   </head>
   <body id="body">
     <main>
-        <h1>Bienvenido a la pagina de Pacto Educativo</h1>
+        <h1><a href='/'>Bienvenido a la pagina de Pacto Educativo</a></h1>
         <hr>
         MENU
+
+        {% if user.is_authenticated %}
+          <li class="bienvenido">Bienvenido, {{ user.get_full_name }} <small>{{ user.username }}</small>!</li>
+          {% if user.is_staff %}
+          <li><a href="/admin">Admin</a></li>
+          {% endif %}
+          <li><a href="{% url 'logout' %}">Salir</a></li>
+          {% else %}
+          <li class="btn-login"><a href="{% url 'login' %}">Ingresar</a></li><li><a href="{% url 'signup' %}">Registrarse</a></li>
+          {% endif %}
+        </ul>
+
         <hr>
       {% block content %}
       

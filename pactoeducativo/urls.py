@@ -15,12 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf.urls import url
+from django.contrib.auth import views as auth_views
+from core import views as coreviews
 
 from core.urls import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
+    url(r'^signup/$', coreviews.signup, name='signup'),
+    url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+
     #Apps Propias
     path('', include('core.urls')),
     path('calendario/', include('calendario.urls'))
