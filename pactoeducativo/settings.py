@@ -25,11 +25,10 @@ SECRET_KEY = 'sp0vbu#+!hhlw+i(9pz*%n@(q42o+5bzdx%=+5m4l+eb34u$2a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.87', 'localhost', 'http://127.0.0.1/', 'marca.jujuy.gob.ar']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Modulos instalados
+
+    #Modulos Personales
+    'core.apps.CoreConfig',
+    'calendario.apps.CalendarioConfig',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +122,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#Configuraciones Propias
+BASE_DIR = os.path.realpath(os.path.dirname(__file__))[:-14]
+MEDIA_URL = 'archivos/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "archivos")
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+#Sistema de accesos:
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/'
+
+# Configurar correos
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mmandrille@gmail.com'
+EMAIL_HOST_PASSWORD = 'comoyoquiera15'
