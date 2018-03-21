@@ -17,17 +17,19 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
+from django.conf.urls.static import static
+from django.conf import settings
+#import personales
 from core import views as coreviews
 
-from core.urls import *
-
 urlpatterns = [
+    #Standards
     path('admin/', admin.site.urls),
     url(r'^signup/$', coreviews.signup, name='signup'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
 
     #Apps Propias
-    path('', include('core.urls')),
+    path('', include('core.urls', namespace='core_app')),
     path('calendario/', include('calendario.urls'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -10,7 +10,6 @@ class Evento(models.Model):
     descripcion = models.TextField()
     fecha = models.DateTimeField('Fecha del Evento')
     models.ForeignKey(User, on_delete=models.CASCADE)
-    #ubicacion = ciudades? 
-    pub_date = models.DateTimeField('Fecha de Publicacion', default=timezone.now())
+    pub_date = models.DateTimeField('Fecha de Publicacion', default=timezone.now)
     def __str__(self):
         return self.nombre

@@ -7,5 +7,7 @@ app_name = 'core'
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url('^faq/$', views.faq, name='faq'),
-    
+    url('^biblioteca/$', views.biblioteca, name='biblioteca'),
+    url('^insumos/$', views.insumos, name='insumos'),
+    url('^encontrate/$', views.encontrate, name='encontrate'),
 ]

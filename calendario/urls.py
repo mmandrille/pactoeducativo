@@ -4,5 +4,5 @@ from . import views
 
 app_name = 'core'
 urlpatterns = [
-    url('', views.calendario, name='home'),
+    url('calendario/', views.calendario, name='home'),
 ]

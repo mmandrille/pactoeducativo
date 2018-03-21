@@ -11,14 +11,14 @@ from django.utils import timezone
 # Create your models here.
 class Archivo(models.Model):
     tipos_de_archivos = (
-        ('1', 'Biblioteca'),
-        ('2', 'Insumos'),
-        ('3', 'Foto'),
+        (1, 'Biblioteca'),
+        (2, 'Insumos'),
+        (3, 'Foto'),
     )
-    tipo = models.CharField(max_length=1, choices=tipos_de_archivos, default='1')
+    tipo = models.CharField(max_length=1, choices=tipos_de_archivos, default=1)
     nombre = models.CharField('Titulo', max_length=200)
     descripcion = models.TextField()
     archivo = models.FileField(upload_to='')
-    pub_date = models.DateTimeField('Fecha de Publicacion', default=timezone.now())
+    pub_date = models.DateTimeField('Fecha de Publicacion', default=timezone.now)
     def __str__(self):
         return self.nombre

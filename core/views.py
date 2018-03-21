@@ -27,3 +27,12 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
+
+def biblioteca(request):
+    return render(request, 'biblioteca.html', { })
+
+def insumos(request):
+    return render(request, 'insumos.html', { })
+
+def encontrate(request):
+    return render(request, 'encontrate.html', { })
