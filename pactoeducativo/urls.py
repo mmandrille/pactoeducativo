@@ -28,7 +28,8 @@ urlpatterns = [
     url(r'^signup/$', coreviews.signup, name='signup'),
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
-
+    #FORO
+    path('foro/', include('foro.urls')),
     #Apps Propias
     path('', include('core.urls', namespace='core_app')),
     path('calendario/', include('calendario.urls'))

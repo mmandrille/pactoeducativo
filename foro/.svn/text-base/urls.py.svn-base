@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+#Importamos modulos standars
+from django.conf.urls.defaults import *
+
+#Estas urls se encargaran de parcear todo lo que viene despues de www.mundofacu.com.ar/usr/
+urlpatterns = patterns('',
+	(r'^$', 'mundofacu.foro.views.Vindex'),
+	(r'^list$', 'mundofacu.foro.views.Vlistado'),
+	(r'^(?P<tag>\d+)$','mundofacu.foro.views.Vsubforo'),
+	(r'^new$', 'mundofacu.foro.views.Vnewcont'),
+	(r'^newforo$', 'mundofacu.foro.views.Vnewsubforo'),
+	(r'^ver(?P<id_cont>\d+)$','mundofacu.foro.views.Ver'),
+
+	(r'^(?P<tipo>\w\w\w\w)(?P<valor>\w\w\w\w)(?P<id_foo>\d+)$','mundofacu.foro.views.Votar'),
+	(r'^(?P<tipo>\w\w\w\w)/denuncia(?P<id_foo>\d+)$','mundofacu.foro.views.Vdenunciar'),
+)

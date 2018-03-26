@@ -3,5 +3,20 @@
 {% block content %}
     <h1>Biblioteca</h1>
     <hr>
-    [elementos]
+    <!--Buscador-->
+    <form method="post" class="buscar-archivos">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <ul>
+        {% for archivo in archivos %}
+        <li>
+            <a href="/biblioteca/{{ archivo.id }}">
+                <br><h2>{{ archivo.nombre }}</h2>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

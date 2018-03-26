@@ -1,0 +1,96 @@
+# -*- coding: utf-8 -*-
+#Importamos modulos necesarios standars
+import datetime
+from django.template import RequestContext
+from django.shortcuts import render_to_response, redirect
+
+#traemos los modulos propios necesarios
+from mundofacu.usuarios.decoradores import login_required, staff_required, under_construction, mod_required, muted
+from models import threads, tipos_thread, subforos, posts, voto, denuncias
+from formularios import Fthread, Fsubforo, Fcomentario, Fdenuncia
+from mundofacu.usuarios.funciones import save, exist
+
+#Definimos todo el conjunto de vistas de threads
+def Vindex(request):
+	return render_to_response('foro/index.html', {"title":"threads"}, context_instance=RequestContext(request))
+
+
+@login_required
+def Vlistado(request):
+	return render_to_response('lista.html',{"title":"Threads", "lista":threads.objects.filter(puntaje__gte=-5).all()}, context_instance=RequestContext(request))
+
+
+@login_required
+def Vsubforo(request, tag):
+	if exist(subforos,"id",tag):
+		T= "Threads"
+		S= "Subforo: " + subforos.objects.get(id=tag).nombre
+		return render_to_response('lista.html', {"title":T, "subject":S, "lista": threads.objects.filter(subforo=tag,puntaje__gte=-5).all(), }, context_instance=RequestContext(request))
+	else: return redirect("/foro")
+
+
+@login_required
+def Ver(request,id_cont):
+	if exist(threads,"id",id_cont):
+		if request.method == 'POST':
+			if Fcomentario(request.POST).is_valid():
+				c = posts(body=request.POST['body'],autor=request.user,thread=threads.objects.get(id=id_cont))
+				c.save()
+				return redirect(request.path)
+		T = "thread: " + threads.objects.get(id=id_cont).titulo
+		return render_to_response('foro/ver.html', {"title":T,'thread': threads.objects.get(id=id_cont), 'posts': posts.objects.filter(thread=id_cont,puntaje__gte=-5).all(), 'form': Fcomentario(), }, context_instance=RequestContext(request))
+	else: return redirect('/foro')
+
+
+@login_required
+@muted
+def Vnewcont(request):
+	T = "Creacion de thread"
+	if request.method == 'POST':
+		if Fthread(request.POST).is_valid():
+			c = Fthread(request.POST).save(commit=False)
+			c.autor = request.user
+			c.save()
+			return render_to_response('save.html', {"tipo":"thread creado", "exito":True,}, context_instance=RequestContext(request))
+		else: return render_to_response('form.html', {'form':Fthread(request.POST),'title': T,}, context_instance=RequestContext(request))
+	else: return render_to_response("form.html", {"form": Fthread(),}, context_instance=RequestContext(request))
+
+
+@login_required
+@mod_required
+def Vnewsubforo(request):
+	T = "Creacion de Subforo"
+	if request.method == 'POST':
+		if Fsubforo(request.POST).is_valid():
+			Fsubforo(request.POST).save()
+			return render_to_response('save.html', {"tipo":"Subforo creado", "exito":True,}, context_instance=RequestContext(request))
+		else: return render_to_response('form.html', {'form':Fsubforo(request.POST),'title': T,}, context_instance=RequestContext(request))
+	else: return render_to_response("form.html", {"form": Fsubforo(),}, context_instance=RequestContext(request))
+
+
+@login_required
+def Votar(request, tipo, valor, id_foo):
+	if tipo== "cont":
+		tabla= threads
+		idx= id_foo
+	else:
+		tabla= posts
+		idx= str(tabla.objects.get(id=id_foo).thread.id)
+	if exist(tabla,"id",id_foo):
+		if valor == "plus": tabla.objects.get(id=id_foo).voto(+1,request.user) #Si el voto es positivo
+		else: tabla.objects.get(id=id_foo).voto(-1, request.user)
+		return redirect('/foro/ver'+idx) #Redireccionamos a listado
+	else: return render_to_response('error.html', {'title':"Votacion", 'msg': 'Esta intentando votar un thread inexistente.'}, context_instance=RequestContext(request))
+
+
+@login_required
+def Vdenunciar(request, tipo, id_foo):
+	if ((tipo == "cont") and exist(threads,"id",id_foo)) or ((tipo== "post") and exist(posts,"id",id_foo)): #Si existe el contneido o post
+		if request.method == 'POST':
+			if Fdenuncia(request.POST).is_valid():
+				if tipo== "cont": threads.objects.get(id=id_foo).denuncia(request.user,request.POST['motivo'])
+				else: posts.objects.get(id=id_foo).denuncia(request.user,request.POST['motivo'])
+				return render_to_response('save.html', {"tipo":"Has realizado una Denuncia", "exito":True,}, context_instance=RequestContext(request))
+			else: return render_to_response('form.html', {'form':Fdenuncia(request.POST),'title': T,}, context_instance=RequestContext(request))
+		else: return render_to_response("form.html", {"form": Fdenuncia(),}, context_instance=RequestContext(request))
+	else: return render_to_response('error.html', {'title':"Denuncia", 'msg': 'Esta intentando denunciar un thread inexistente.'}, context_instance=RequestContext(request))

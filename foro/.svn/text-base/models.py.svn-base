@@ -1,0 +1,108 @@
+# -*- coding: utf-8 -*-
+#Importamos modulos standars
+import datetime
+from django.db import models
+from django.contrib.auth.models import User
+#Modulos propios
+from mundofacu.usuarios.funciones import save
+
+
+# Create your models here.
+class subforos(models.Model):
+	nombre = models.CharField(max_length=50, unique=True)
+	descripcion = models.CharField(max_length=200)
+	activo = models.BooleanField(default=True)
+	def __unicode__(self):
+		return self.nombre
+
+
+class tipos_thread(models.Model):
+	nombre = models.CharField(max_length=50, unique=True)
+	descripcion = models.CharField(max_length=200)
+	tratamiento = models.TextField(max_length=1000)
+	def __unicode__(self):
+		return self.nombre
+
+
+class threads(models.Model):
+	tipo_thread = models.ForeignKey(tipos_thread, default=1)
+	autor = models.ForeignKey(User)
+	titulo = models.CharField(max_length=50, unique=True)
+	subforo = models.ForeignKey(subforos)
+	fecha_creacion = models.DateField(default=datetime.date.today())
+	resumen = models.CharField(max_length=200)
+	body = models.CharField(max_length=500)
+	puntaje = models.IntegerField(default=0)
+	def __unicode__(self):
+		return self.titulo + ": " + self.resumen + " -Autor: " + self.autor.username + ". (Puntaje: "+str(self.puntaje) + ")"
+	def link(self):
+		return ("/foro/ver" + str(self.id))
+	def voto(self,valor,usr):
+		if (voto.objects.filter(thread=self,user=usr).count() == 0):
+			voto(thread=self,user=usr).save()
+			self.puntaje+= valor
+			save(self)
+			self.autor.get_profile().puntaje+=valor
+			save(self.autor.get_profile())
+	def denuncia(self, usr, razon):
+		denuncias(thread=self,usuario=usr,motivo=razon).save()
+
+
+class posts(models.Model):
+	thread= models.ForeignKey(threads)
+	autor= models.ForeignKey(User)
+	body= models.CharField(max_length=200)
+	fecha_creacion= models.DateField(default=datetime.date.today())
+	puntaje= models.IntegerField(default=0)
+	def __unicode__(self):
+		return self.autor.username + " comento: " + self.body + "| al contenido: " + self.thread.titulo + "| " + str(self.fecha_creacion) + ". (Puntaje: "+str(self.puntaje)+")"
+	def link(self):
+		return ("/foro/ver" + str(self.thread.id))
+	def voto(self,valor,usr):
+		if (voto.objects.filter(post=self,user=usr).count() == 0):
+			voto(post=self,user=usr).save()
+			self.puntaje+= valor
+			self.save()
+			self.autor.get_profile().puntaje+=valor
+			save(self.autor.get_profile())
+	def denuncia(self, usr, razon):
+		denuncias(post=self,usuario=usr,motivo=razon).save()
+
+
+class voto(models.Model):
+	thread= models.ForeignKey(threads, null=True)
+	post= models.ForeignKey(posts, null=True)
+	user= models.ForeignKey(User)
+	class Meta:
+		unique_together = [("thread", "user"),("post","user")]
+
+
+class threads_viejos(threads): #Creamos una tabla igual a threads con un campo mas :D
+	fecha_expiracion = models.DateField()
+
+
+class denuncias(models.Model):
+	thread = models.ForeignKey(threads, null=True)
+	post = models.ForeignKey(posts, null=True)
+	motivo = models.CharField(max_length=200) #Explicacion de por que se realizo la denuncia
+	usuario = models.ForeignKey(User) #Quien realizo la denuncia
+	fecha = models.DateField(null=False, default=datetime.date.today())
+	pendiente = models.BooleanField(default=True) #Si aun no fue revisada por un moderador
+	def raiz(self):
+		if self.post != None: return self.post
+		else: return self.thread
+	def __unicode__(self):
+		if self.post != None: return ('Post: ' + self.post.body + " |Fecha: " + str(self.fecha))
+		else: return ('Thread: ' + self.thread.titulo + " |Fecha: " + str(self.fecha))
+
+
+class tags(models.Model):
+	nombre = models.CharField(max_length=50)
+	descripcion = models.CharField(max_length=200)
+
+
+class thread_tag(models.Model):
+	thread = models.ForeignKey(threads)
+	tag = models.ForeignKey(tags)
+	class Meta:
+		unique_together = [("thread", "tag")]

@@ -3,5 +3,13 @@
 {% block content %}
     <h1>Encontrate</h1>
     <hr>
-    [elementos]
+    <ul>
+            {% for archivo in archivos %}
+            <li>
+                <a href="/archivo/{{ archivo.id }}">
+                    <br><h2>{{ archivo.nombre }}</h2>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
 {% endblock %}
