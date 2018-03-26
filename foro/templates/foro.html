@@ -2,7 +2,12 @@
 
 {% block content %}
     <hr>
-        <h1>FORO</h1>
-    <hr>
-    <p>En construccion...</p>
+    <h1>FORO</h1>
+    {% for subforo in subforos %}
+        <hr>
+        <h2>{{ subforo.nombre }}</h2>
+            {% for thread in threads %}
+                <p>{{ thread.nombre}}</p>
+            {% endfor %}
+    {% endfor %}
 {% endblock %}
