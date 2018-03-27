@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-  <h1>{{ archivo.nombre }}</h1>
-  <hr>
-  <p> {{ archivo.descripcion }} </p>
-  <p> <a href='/{{ archivo.archivo.url }}' download>Descargar</a></p>
-{% endblock %}

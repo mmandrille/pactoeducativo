@@ -32,5 +32,7 @@ urlpatterns = [
     path('foro/', include('foro.urls')),
     #Apps Propias
     path('', include('core.urls', namespace='core_app')),
-    path('calendario/', include('calendario.urls'))
+    path('calendario/', include('calendario.urls')),
+    path('biblioteca/', include('biblioteca.urls')),
+    path('encontrate/', include('encontrate.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

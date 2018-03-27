@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'calendario.apps.CalendarioConfig',
     'foro.apps.ForoConfig',
+    'biblioteca.apps.BibliotecaConfig',
+    'encontrate.apps.EncontrateConfig',
 ]
 
 

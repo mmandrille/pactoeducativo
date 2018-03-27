@@ -7,7 +7,4 @@ app_name = 'core'
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url('^faq/$', views.faq, name='faq'),
-    url('^biblioteca/$', views.biblioteca, name='biblioteca'),
-    path('biblioteca/<int:archivo_id>', views.archivo, name='archivo'),
-    url('^encontrate/$', views.encontrate, name='encontrate'),
 ]
