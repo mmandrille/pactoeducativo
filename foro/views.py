@@ -14,7 +14,13 @@ def foro(request):
 	return render(request, 'foro.html', {'subforos': subforos, 'threads' : threads })
 
 def subforo(request, subforo_id):
-	return render(request, 'subforo.html',)
+	threads = Thread.objects.filter(subforo=subforo_id)
+	return render(request, 'subforo.html', {'threads' : threads})
 
 def thread(request, thread_id):
-	return render(request, 'thread.html',)
+	thread = Thread.objects.get(pk=thread_id)
+	posts = Post.objects.filter(thread=thread_id)
+	return render(request, 'thread.html', {'thread' : thread, 'posts' : posts})
+
+def newthread(request):
+	return render(request, 'newthread.html',)

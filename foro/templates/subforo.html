@@ -6,4 +6,7 @@
         {% for thread in threads %}
                 <a href='/foro/thread/{{thread.id}}'><p>{{ thread.nombre}}</p></a>
         {% endfor %}
+
+        <hr>
+        <p><a href='/foro/newthread/'>Crear Post</a></p>
 {% endblock %}

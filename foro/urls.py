@@ -10,4 +10,6 @@ urlpatterns = [
 	path('', views.foro, name='foro'),
 	path('subforo/<int:subforo_id>/', views.subforo, name='subforo'),
 	path('thread/<int:thread_id>/', views.thread, name='thread'),
+
+	path('newthread/', views.newthread, name='newthread'),
 ]
