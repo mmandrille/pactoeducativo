@@ -9,4 +9,6 @@ def encontrate(request):
     return render(request, 'encontrate.html', {'albums' :albums})
 
 def album(request, album_id):
-    return render(request, 'mostrar_album.html', {})
+    album = Album.objects.get(pk=album_id)
+    fotos = Foto.objects.filter(album=album_id)
+    return render(request, 'mostrar_album.html', {'album': album,'fotos': fotos})

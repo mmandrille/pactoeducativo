@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    FORMULARIO DE CREACION DE Thread!
+    <!-- Si esta loggeado Puede dejar comentarios -->
+    {% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Crear Post</button>
+    </form>
+    {% endif %}
 {% endblock %}

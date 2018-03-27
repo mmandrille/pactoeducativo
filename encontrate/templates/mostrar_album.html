@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Encontrate</h1>
+    <hr>
+    {% for foto in fotos %}
+        <img src="/archivos/{{ foto.foto }}" width="33%" height="33%">
+    {% endfor %}
+{% endblock %}

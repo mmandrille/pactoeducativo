@@ -9,4 +9,13 @@
     {% for post in posts %}
         <p>{{ post.body }} - {{ post.autor }}</p>
     {% endfor %}
+
+    {% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Comentar</button>
+    </form>
+    {% endif %}
+
 {% endblock %}

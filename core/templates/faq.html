@@ -2,6 +2,16 @@
 
 {% block content %}
     <h1>Que es pacto?</h1>
+    <p>TEXTO EXPLICATIVO - TEXTO EXPLICATIVO - TEXTO EXPLICATIVO</p>
     <hr>
-    FAQ
+
+    <h2>Preguntas Frecuentes:</h2>
+    <ul>
+        {% for faq in faqs %}
+        <li>
+            <b>{{ faq.pregunta }}</b>
+            <p>{{ faq.respuesta }}</p>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

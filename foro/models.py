@@ -29,4 +29,4 @@ class Post(models.Model):
 	body= models.CharField(max_length=200)
 	fecha_creacion= models.DateField(default=datetime.date.today)
 	def __str__(self):
-		return self.autor.username + " comento: " + self.body + "| al contenido: " + self.Thread.titulo + "| " + str(self.fecha_creacion) + ")"
+		return self.autor.username + " comento: " + self.body + "| al contenido: " + self.Thread.nombre + "| " + str(self.fecha_creacion) + ")"

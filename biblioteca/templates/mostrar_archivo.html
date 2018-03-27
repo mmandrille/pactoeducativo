@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ archivo.nombre}}</h1>
+  <img src="/archivos/{{ archivo.portada }}" width="25%" height="25%">
+  <p> {{archivo.descripcion }}</p>
+  <a href="/{{archivo.archivo}}" download>Descargar</a>
+{% endblock %}

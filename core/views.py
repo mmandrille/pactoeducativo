@@ -5,12 +5,15 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+#Agregamos modulos personales
+from .models import Faq
 
 def home(request):
     return render(request, 'home.html', { })
 
 def faq(request):
-    return render(request, 'faq.html', { })
+    faqs = Faq.objects.all()
+    return render(request, 'faq.html', {'faqs' : faqs })
 
 def signup(request):
     if request.method == 'POST':
