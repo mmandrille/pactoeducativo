@@ -5,9 +5,12 @@
     <h1>FORO</h1>
     {% for subforo in subforos %}
         <hr>
-        <h2>{{ subforo.nombre }}</h2>
+        <h2><a href='/foro/subforo/{{subforo.id}}'>{{ subforo.nombre }}</a></h2>
+        <img src="/archivos/{{ subforo.icono }}" width="10%" height="10%">
             {% for thread in threads %}
-                <p>{{ thread.nombre}}</p>
+                {% if thread.subforo.id == subforo.id %}
+                    <a href='/foro/thread/{{thread.id}}'><p>{{ thread.nombre}}</p></a>
+                {% endif %}
             {% endfor %}
     {% endfor %}
 {% endblock %}

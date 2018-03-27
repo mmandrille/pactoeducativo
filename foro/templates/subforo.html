@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <hr>
+    <h1>SUBFORO</h1>
+        {% for thread in threads %}
+                <a href='/foro/thread/{{thread.id}}'><p>{{ thread.nombre}}</p></a>
+        {% endfor %}
+{% endblock %}

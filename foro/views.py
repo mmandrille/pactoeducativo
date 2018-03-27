@@ -8,7 +8,13 @@ from django.shortcuts import render
 from .models import Thread, Subforo, Post
 
 #Definimos todo el conjunto de vistas de threads
-def Vindex(request):
+def foro(request):
 	subforos = Subforo.objects.all()
 	threads = Thread.objects.all()
 	return render(request, 'foro.html', {'subforos': subforos, 'threads' : threads })
+
+def subforo(request, subforo_id):
+	return render(request, 'subforo.html',)
+
+def thread(request, thread_id):
+	return render(request, 'thread.html',)
