@@ -1,19 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <hr>
-        IMAGEN - HEADER
-    <hr>
 
-    BOTONES
-    <ul>
-        <li><a href='/faq/'>1- Que es pacto?</a></li>
-        <li><a href='/foro/'>2- Dialoguemos</a></li>
-        <li><a href='/biblioteca/'>3- Biblioteca</a></li>
-        <li><a href='http://prensa.jujuy.gob.ar/tag/pacto-social-educativo/'>4- Noticias</a></li>
-        <li><a href='/calendario/'>5- Agenda</a></li>
-        <li><a href='/encontrate/'>6- Encontrate</a></li>
-    </ul>
+    <div class="contenedor">
+        <ul class="menu-principal">
+            <li class="color1"><a href='/faq/'>
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                <span class="texto">¿Que es #PactoSxE?</span>
+            </a></li>
+            
+            <li class="color2"><a href='/foro/'>
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                <span class="texto">Dialoguemos</span>
+            </a></li>
+            
+            <li class="color3"><a href='/biblioteca/'>
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                <span class="texto">Biblioteca</span>
+            </a></li>
+            
+            <li class="color3"><a href='http://prensa.jujuy.gob.ar/tag/pacto-social-educativo/'>
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                <span class="texto">Noticias</span>
+            </a></li>
+            
+            <li class="color1"><a href='/calendario/'>
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                <span class="texto">Agenda</span>
+            </a></li>
+            
+            <li class="color2"><a href='/encontrate/'>
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                <span class="texto">Encontrate</span>
+            </a></li>
+        </ul>
+    </div>
+    <br><br>
 
 {% endblock %}
 
