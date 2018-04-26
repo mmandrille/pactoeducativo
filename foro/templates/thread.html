@@ -1,21 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="ver-thread">
     <a href='/foro/subforo/{{ thread.subforo.id }}'><h1>Subforo {{ thread.subforo.nombre }}</h1></a>
-    <h2>{{ thread.nombre }}</h2>
-    <p> {{ thread.body }}</p>
-    <hr>
-    <h3>Comentarios:</h3>
-    {% for post in posts %}
-        <p>{{ post.body }} - {{ post.autor }}</p>
-    {% endfor %}
-
-    {% if user.is_authenticated %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Comentar</button>
-    </form>
-    {% endif %}
+    <div class="contenido">
+        <h2>{{ thread.nombre }}</h2>
+        <p> {{ thread.body }}</p>
+        <hr>
+        <h3>Comentarios:</h3>
+        {% for post in posts %}
+            <p>{{ post.body }} - {{ post.autor }}</p>
+        {% endfor %}
+    
+        {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Comentar</button>
+        </form>
+        {% endif %}
+    </div>
+</div>
 
 {% endblock %}

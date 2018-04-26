@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="biblioteca">
     <h1>Biblioteca</h1>
     <hr>
     <!--Buscador-->
@@ -10,14 +11,32 @@
         <button type="submit">Buscar</button>
     </form>
     
-    <ul>
-        {% for archivo in archivos %}
-        <li>
-            <a href="/biblioteca/{{ archivo.id }}">
-                <br><h2>{{ archivo.nombre }}</h2>
-                <img src="/archivos/{{ archivo.portada }}" width="25%" height="25%">
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="lista-archivos">
+        <ul class="grid">
+            {% for archivo in archivos %}
+            <li class="grid-item">
+                <a href="/biblioteca/{{ archivo.id }}">
+                    <br><h2>{{ archivo.nombre }}</h2>
+                    <div class="img">
+                    <img src="/archivos/{{ archivo.portada }}">
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+    <script type="text/javascript">
+    window.onload = function()
+    {
+        $('.grid').masonry({
+          // options
+          itemSelector: '.grid-item',
+          columnWidth: 580,
+          gutter: 5,
+          fitWidth: true
+        });
+    };
+    </script>
 {% endblock %}

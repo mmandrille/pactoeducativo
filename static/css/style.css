@@ -11,14 +11,14 @@ body
 
 header
 {
-    position: absolute;
+position: absolute;
     width: 100%;
     position: fixed;
     height: 70px;
     z-index: 11;
-    background-color: #801c1a;
-    box-shadow: 0px 3px 20px #00000087;
-    top: 0px;ul.nav li a
+    background-color: #1591cd;
+    box-shadow: 0px 3px 25px #000000a3;
+    top: 0px;
 }
 
 header.sticky
@@ -30,6 +30,18 @@ header.sticky
 a:focus, a:hover
 {
     text-decoration: none;
+}
+
+main {
+ margin-top: 2em;
+}
+
+.portada
+{
+    background-image: url(../img/header.jpg);
+    height: 200px;
+    background-size: cover;
+    box-shadow: 0px 0px 30px #1c4d657a;
 }
 
 .contenedor
@@ -52,6 +64,24 @@ content: "#PactoSxE";
     font-size: 60px;
     font-weight: bold;
     background: white;
+}
+
+.btn-login.nomob a, .btn-register a
+{
+    font-size: 12px !important;
+    font-weight: lighter;
+    border-radius: 5px;
+}
+
+.btn-login.nomob a
+{
+    background: #1e9edc;
+    margin-left: 20px;
+}
+
+.btn-register a
+{
+ font-weight: normal;
 }
 
 ul.menu-principal
@@ -469,7 +499,7 @@ ul.nav li:hover span.triangle
 {
     background: none;
 /*  color: #20dce8;*/
-    background-color: #8e2725;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .navbar-right {
@@ -516,6 +546,7 @@ header .btn-default
   height: 70px;
     top: -5px;
     position: relative;
+    padding: 5px;
 }
 
 .btn.ver-video
@@ -2263,6 +2294,604 @@ section.pacto-social
 }
 
 /* FIN PACTO SOCIAL EDUCACION */
+
+/* ICONOS HOME */
+
+.menu-principal .icono
+{
+    width: 180px;
+    height: 180px;
+    font-size: 130px;
+    background: #801c1a;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding-top: 25px;
+    color: whitesmoke;
+    border-radius: 20px;
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.menu-principal .icono-agenda
+{
+    background-image: url(../img/icono-agenda.png);
+    background-color: #db8e2b;
+}
+
+.menu-principal .icono-quees
+{
+ background-image: url(../img/icono-quees.png);
+ background-color: #db8e2b;
+}
+
+.menu-principal .icono-dialoguemos
+{
+ background-image: url(../img/icono-dialoguemos.png);
+     background-color: #1592cd;
+}
+
+.menu-principal .icono-biblioteca
+{
+ background-image: url(../img/icono-biblioteca.png);
+     background-color: #c72a75;
+}
+
+.menu-principal .icono-noticias
+{
+ background-image: url(../img/icono-insumos.png);
+     background-color: #c72a75;
+}
+
+.menu-principal .icono-encontrate
+{
+ background-image: url(../img/icono-encontrate.png);
+ background-color: #1592cd;
+}
+
+/* FIN ICONOS HOME */
+
+/* QUE ES */
+
+.quees h1
+{
+ text-align: center;
+ color: #333;
+}
+
+.quees .texto-explicativo
+{
+ text-align: center;
+ color: #333;
+}
+
+.quees .seccion-preguntas-frecuentes
+{max-width: 900px;
+    margin: auto;
+    padding: 10px 40px;
+    box-shadow: 0px 0px 20px #00000026;
+    border-radius: 10px;
+    margin-bottom: 50px;}
+
+.quees .preguntas-frecuentes
+{
+ list-style: none;
+ padding-left: 0px;
+}
+
+.quees .collapse.in
+{
+     margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.quees .btn-primary
+{
+     color: #fff;
+     background-color: #1591cd;
+    border-color: #1787bd;
+    min-width: 450px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* FIN QUE ES */
+
+/* BIBLIOTECA */
+
+.biblioteca
+{
+   margin-bottom: 40px;
+}
+
+.biblioteca h1
+{
+   text-align: center;
+}
+
+.lista-archivos
+{
+    text-align: center;
+    padding-left: 0px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: block;
+}
+
+.lista-archivos li a
+{
+   color: white;
+}
+
+.lista-archivos li:first-child
+{
+ /*  max-height: 680px; */
+}
+
+.lista-archivos li
+{
+    position: relative;
+    display: inline-block;
+ /*   max-height: 330px; */
+    margin: auto;
+}
+
+.lista-archivos li .img{
+   background: #000;
+   border-radius: 5px;
+box-shadow: 0px 0px 13px #2c5b7173;
+   /*max-height: 30vh;*/
+   overflow: hidden;
+}
+
+.lista-archivos li .img img{
+   max-width: 100%;
+   max-height: 100%;
+}
+
+.lista-archivos li:hover img
+{
+   opacity: 0.5;
+    
+    -webkit-transition: opacity 500ms ease;
+    -moz-transition: opacity 500ms ease;
+    -ms-transition: opacity 500ms ease;
+    -o-transition: opacity 500ms ease;
+    transition: opacity 500ms ease;
+}
+
+.lista-archivos li h2{
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.lista-archivos li:hover h2{
+   opacity: 1;
+   z-index: 1;
+}
+
+.buscar-archivos
+{
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.buscar-archivos label
+{
+   color: #fff;
+   font-weight: normal;
+}
+
+.buscar-archivos input[type="text"]
+{
+   display: inline-block;
+    width: 300px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.buscar-archivos button
+{
+    font-size: 0.9em !important;
+    display: inline-block !important;
+    position: relative;
+    padding: 8px 20px !important;
+    top: 2px;
+    background: #c72a75 !important;
+    border: 1px solid #b73372 !important;
+    border-radius: 5px;
+    color: white;
+}
+
+.buscar-archivos button:hover
+{
+ opacity: 0.9;
+}
+
+.mostrar-archivo
+{
+   display: table;
+   color: #333;
+}
+
+.mostrar-archivo h1
+{
+ text-align: center;
+ color: #333;
+}
+
+.mostrar-archivo .col-md-6{
+   padding: 20px;
+   text-align :center;
+}
+
+.mostrar-archivo .padding-top
+{
+   padding-top: 0px;
+}
+
+.mostrar-archivo p.descripcion
+{
+   font-size: 1.2em;
+}
+
+.mostrar-archivo .boton-descargar
+{
+  background: #db8e2b;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: block;
+    width: 125px;
+    margin: auto;
+}
+
+.grid
+{
+   margin: 0 auto;
+}
+
+.grid-item { width: 560px; }
+.grid-item--width2 { width: 260px; }
+
+/* FIN BIBLIOTECA */
+
+/* FORO */
+
+.foro
+{
+ margin-bottom: 30px;
+}
+
+.foro h1
+{
+ text-align: center;
+ color: #333;
+}
+
+.foro .subforo
+{
+     max-width: 900px;
+    margin: auto;
+    box-shadow: 0px 0px 10px #ddd;
+}
+
+.foro .subforo h2
+{
+ margin: 0px;
+ background: #1591cd;
+    color: white !important;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.foro .subforo h2 a
+{
+ color: white;
+}
+
+.foro .subforo h2 img
+{
+     height: 40px;
+    margin-right: 15px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px #1d86b9;
+}
+
+.foro .subforo .threads
+{
+    padding: 10px 30px;
+        margin-top: 10px;
+}
+
+.foro .subforo .thread p
+{
+    margin-bottom: 5px;
+    border-bottom: 1px solid #f5f5f5;
+    padding-bottom: 5px;
+}
+
+.foro .subforo .thread
+{
+ margin-bottom: 2px;
+}
+
+.ver-thread h1
+{
+   text-align: center;
+}
+
+.ver-thread .contenido
+{
+     max-width: 1024px;
+    margin: auto;
+    box-shadow: 0px 0px 10px #ddd;
+    padding: 5px 25px;
+    margin-bottom: 40px;
+    margin-top: 25px;
+}
+
+.ver-thread .contenido h2
+{
+ text-align: center;
+}
+
+.foro a.crear-post
+{
+     background: #c72a75;
+    color: white;
+    padding: 10px 25px;
+    margin: auto;
+    display: block;
+    width: 140px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.foro a.crear-post:hover
+{
+ opacity: 0.9;
+}
+
+/* FIN FORO */
+
+/* LOGIN */
+
+
+section.login
+{
+background: url(./img/tilcara.jpg);
+    width: 100%;
+    height: 100%;
+    height: calc(70vh - 100px);
+    padding-top: 7em;
+    background-size: cover;
+}
+
+section.login .login-container
+{
+    background: #70277d;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 0px;
+    z-index: 1;
+    color: white; 
+}
+
+section.login .login-container h2
+{
+    background: #8a2f9a;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+section.login .input-group
+{
+    padding-left: 20px;
+    padding-right: 20px;
+   width: 100%;
+   margin-top: 15px;
+}
+
+section.login label
+{
+    margin-bottom: 0px;
+    font-weight: normal;
+}
+
+section.login button{
+       background: #8a2f9a;
+    border: none;
+    margin: auto;
+    font-size: 1.1em;
+    padding: 7px 20px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+section.login a.signup
+{
+    color: #ddd;
+    display: block;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 7px;
+}
+
+section.login a.signup:hover,
+section.login button:hover
+{
+   opacity: 0.9;
+   text-decoration: none;
+}
+
+.login-overlay
+{
+    background: #00000075;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 60px);
+    z-index: 0;
+    position: absolute;
+    top: 60px;
+}
+
+.login-overlay-ignore
+{
+   z-index : 1;
+   position: absolute;
+   width: 100%;
+}
+
+/* FIN LOGIN */
+
+/* Registro */
+
+.seccion-registro {
+}
+
+.seccion-registro .col-md-6
+{
+    height: calc(100vh - 60px);
+    padding-top: 10vh;
+    border-radius: 20px;
+}
+
+.seccion-registro h3
+{
+    background: #c03b91;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #b156b9;
+    border-bottom-color: #9a2f87;
+    max-width: 350px;
+    margin-right: auto;
+    color: white;
+    text-decoration: none;
+}
+
+.seccion-registro a, .seccion-registro form button, .buscar-archivos button
+{
+background: #1591cd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #1681b5;
+    max-width: 350px;
+    margin-right: auto;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: auto;
+    display: block;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+.seccion-registro a:hover,
+.seccion-registro a:active,
+.seccion-registro form button:hover,
+.seccion-registro form button:active
+{
+   color: white;
+   text-decoration: none;
+   opacity: 0.9;
+}
+
+.seccion-registro p
+{
+    color: white;
+    font-size: 1.5em;
+    margin-top: 35px;
+}
+
+.seccion-registro form
+{
+    background: #c72a75;
+    max-width: 400px;
+    padding: 50px 40px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #a03066 inset;
+    border: 1px solid #a72061;
+    margin-top: 60px;
+}
+
+.seccion-registro form label
+{
+   color: white;
+   font-weight: normal;
+}
+
+.seccion-registro .input-group
+{
+   width: 100%;
+   padding-top: 7px;
+}
+
+.form-control
+{
+   border-radius: 4px !important;
+}
+
+.seccion-registro label{
+   margin-bottom: 0px;
+}
+
+.pagina-registro
+{
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+
+.pagina-registro h2
+{
+   color: #333;
+   text-align: center;
+}
+
+section.pagina-registro hr{
+       max-width: 800px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.pagina-registro.seccion-registro form{
+   padding: 20px 60px;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Fin registro */
 
 /* ANIMACIONES */
 

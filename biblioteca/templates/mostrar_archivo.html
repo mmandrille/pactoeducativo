@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<section class="seccion-archivos mostrar-archivo" style="padding-bottom: 40px">
   <h1>{{ archivo.nombre}}</h1>
-  <img src="/archivos/{{ archivo.portada }}" width="25%" height="25%">
-  <p> {{archivo.descripcion }}</p>
-  <a href="/{{archivo.archivo}}" download>Descargar</a>
+  <hr>
+  <div class="col-md-6">
+    <img src="/archivos/{{ archivo.portada }}" width="100%">
+  </div>
+  
+  <div class="col-md-6">
+    <p> {{archivo.descripcion }}</p>
+    <a class="boton-descargar" href="/{{archivo.archivo}}" download>Descargar</a>
+  </div>
+</section>
 {% endblock %}

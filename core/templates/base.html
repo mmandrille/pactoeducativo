@@ -20,86 +20,54 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="header-logo">
-      	<img src="{% static 'img/logo-footer.png' %}" />
+      <div class="header-logo" onclick="location.href='http://www.jujuy.gob.ar'" style="cursor: pointer">
+      	<img src="{% static 'img/logo.png' %}" />
       </div>
       	<div class="collapse navbar-collapse mobile-only" id="nav-mobile" style="display:none">
       		<ul class="nav navbar-nav">
-	        	<li><a href="index.html">Inicio</a></li>
-      			<li><a href="https://vivi.jujuy.gob.ar/Galeria/Principal">Viv&iacute; Jujuy</a></li>
-	        	<li><a href="jujuyEnVivo.html">Jujuy en vivo</a></li>
-	       		<li><a href="http://jujuy.gob.ar/contacto/">Contacto</a></li>
-      		</ul>
+	        	<li><a href="/">Inicio</a></li>
+	        	<li><a href="/faq/">¿Que es #PactoSxE?</a></li>
+	        	<li><a href="/biblioteca/">Biblioteca</a></li>
+	        	<li><a href="/calendario/">Agenda</a></li>
+            
+            {% if user.is_authenticated %}
+            <li class="bienvenido">Bienvenido, {{ user.get_full_name }} <small>{{ user.username }}</small>!</li>
+            {% if user.is_staff %}
+            <li><a href="/admin">Admin</a></li>
+            {% endif %}
+            <li><a href="{% url 'logout' %}">Salir</a></li>
+            {% else %}
+            <li class="btn-login"><a href="{% url 'login' %}">Ingresar</a></li><li><a href="{% url 'signup' %}">Registrarse</a></li>
+            {% endif %}
+           </ul>
       	</div>
 	    <div class="collapse navbar-collapse">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="index.html">Inicio<span class="sr-only">(current)</span></a></li>
-	        <li class="desplegable"><a href="#">Jujuy</a>
-	        	<ul class="submenu">
-		        	<li><a href="https://vivi.jujuy.gob.ar/Galeria/Principal">Viv&iacute; Jujuy</a></li>
-		        	<li><a href="jujuyEnVivo.html">Jujuy en vivo</a></li>
-		        </ul>
-	        	<span class="triangle glyphicon glyphicon-triangle-bottom"></span>
-	        </li>
-	       	<li class="desplegable"><a href="#">Organismos</a>
-	        	<ul class="submenu">
-	        		<li><a href="http://www.ambientejujuy.gob.ar/">Ministerio de Ambiente</a></li>
-	        		<li><a href="http://culturayturismo.jujuy.gob.ar/">Ministerio de Cultura y Turismo</a></li>
-	        		<li><a href="http://produccion.jujuy.gob.ar/">Minsiterio de Desarrollo Econ&oacute;mico y Producci&oacute;n</a></li>
-	        		<li><a href="http://desarrollohumano.jujuy.gob.ar/">Ministerio de Desarrollo Social</a></li>
-	        		<li><a href="http://educacion.jujuy.gob.ar/">Ministerio de Educaci&oacute;n</a></li>
-	        		<li><a href="http://fiscalia.jujuy.gob.ar/">Fiscal&iacute;a de Estado</a></li>
-	        		<li><a href="http://hacienda.jujuy.gob.ar/">Ministerio de Hacienda y Finanzas</a></li>
-	        		<li><a href="http://gobiernoyjusticia.jujuy.gob.ar/">Ministerio de Gobierno y Justicia</a></li>
-	        		<li><a href="http://infraestructura.jujuy.gob.ar/">Ministerio de Infraestructura</a></li>
-	        		<li><a href="http://salud.jujuy.gob.ar/">Ministerio de Salud</a></li>
-	        		<li><a href="http://seguridad.jujuy.gob.ar/">Ministerio de Seguridad</a></li>
-	        		<li><a href="http://trabajo.jujuy.gob.ar/">Ministerio de Trabajo y Empleo</a></li>
-		        </ul>
-	        	<span class="triangle glyphicon glyphicon-triangle-bottom"></span>
-	        </li>
-	       	<li><a href="autoridades.html">Autoridades</a></li>
-	       	<li><a href="http://jujuy.gob.ar/contacto/">Contacto</a></li>
-	       <!-- <li class="desplegable"><a href="#">Tu Gobierno</a>
-	        	<ul class="submenu">
-		        	<li>Gesti&oacute;n</li>
-		        	<li>Organigrama</li>
-		        	<li>Servicios</li>
-		        	<li>Noticias</li>
-		        </ul>
-	        	<span class="triangle glyphicon glyphicon-triangle-bottom"></span>
-	       </li>-->
+	        	<li><a href="/">Inicio</a></li>
+	        	<li><a href="/faq/">¿Que es #PactoSxE?</a></li>
+	        	<li><a href="/biblioteca/">Biblioteca</a></li>
+	        	<li><a href="/calendario/">Agenda</a></li>
+            
+            {% if user.is_authenticated %}
+            <li class="bienvenido">Bienvenido, {{ user.get_full_name }} <small>{{ user.username }}</small>!</li>
+            {% if user.is_staff %}
+            <li><a href="/admin">Admin</a></li>
+            {% endif %}
+            <li><a href="{% url 'logout' %}">Salir</a></li>
+            {% else %}
+            <li class="btn-login nomob"><a href="{% url 'login' %}">Ingresar</a></li><li class="btn-register"><a href="{% url 'signup' %}">Registrarse</a></li>
+            {% endif %}
 	      </ul>
-	    <!--  <form class="navbar-form navbar-right">
-	        <div class="form-group">
-	          <input type="text" class="form-control search-input" placeholder="Buscar">
-	        </div>
-	        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-	    </form>-->
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
     </header>
     
-    <main>
+    <div class="portada">
+      
+    </div>
     
-      <hr>
-          IMAGEN - HEADER
-      <hr>
-
-      <ul class="login">
-        {% if user.is_authenticated %}
-          <li class="bienvenido">Bienvenido, {{ user.get_full_name }} <small>{{ user.username }}</small>!</li>
-          {% if user.is_staff %}
-          <li><a href="/admin">Admin</a></li>
-          {% endif %}
-          <li><a href="{% url 'logout' %}">Salir</a></li>
-          {% else %}
-          <li class="btn-login"><a href="{% url 'login' %}">Ingresar</a></li><li><a href="{% url 'signup' %}">Registrarse</a></li>
-          {% endif %}
-        </ul>
-
-        <hr>
+    <main>
       {% block content %}
       
       {% endblock %}
@@ -162,5 +130,6 @@
     
     <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js' %}"></script>
   </body>
 </html>

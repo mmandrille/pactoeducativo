@@ -1,17 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Que es pacto?</h1>
-    <p>TEXTO EXPLICATIVO - TEXTO EXPLICATIVO - TEXTO EXPLICATIVO</p>
+<div class="quees">
+    <h1>¿Que es #PactoSxE?</h1>
+    <p class="texto-explicativo">TEXTO EXPLICATIVO - TEXTO EXPLICATIVO - TEXTO EXPLICATIVO</p>
     <hr>
 
-    <h2>Preguntas Frecuentes:</h2>
-    <ul>
-        {% for faq in faqs %}
-        <li>
-            <b>{{ faq.pregunta }}</b>
-            <p>{{ faq.respuesta }}</p>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="seccion-preguntas-frecuentes">
+        <h2>Preguntas Frecuentes:</h2>
+        <ul class="preguntas-frecuentes">
+            {% for faq in faqs %}
+            <li>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ faq.id }}" aria-expanded="false" aria-controls="collapseExample">
+                  {{ faq.pregunta }}
+                </button>
+                <div id="{{ faq.id }}" class="collapse">{{ faq.respuesta }}</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<script>
+    window.onload = function()
+    {
+        $('#1').addClass("in");
+    };
+</script>
+
 {% endblock %}
