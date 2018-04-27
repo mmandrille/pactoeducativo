@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="encontrate">
     <h1>Encontrate</h1>
     <hr>
     <ul>
             {% for album in albums %}
             <li>
                 <a href="/encontrate/{{ album.id }}">
-                    <br><h2>{{ album.nombre }}</h2>
-                    <img src="/archivos/{{ album.portada }}" width="25%" height="25%">
+                    <h2>{{ album.nombre }}</h2>
+                    <img src="/archivos/{{ album.portada }}" >
                 </a>
             </li>
             {% endfor %}
         </ul>
+</div>
 {% endblock %}

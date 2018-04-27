@@ -2893,6 +2893,76 @@ section.pagina-registro hr{
 
 /* Fin registro */
 
+/* ENCONTRATE */
+
+.encontrate
+{
+ margin-bottom: 30px;
+}
+
+.encontrate h1
+{
+ text-align: center;
+}
+
+.encontrate ul
+{
+ list-style: none;
+ padding-top: 20px;
+ text-align: center;
+}
+
+.encontrate ul li
+{
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    box-shadow: 0px 0px 15px #ccc;
+    width: 30%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.encontrate ul li h2
+{
+     margin-top: 0px;
+    color: #1591cd;
+}
+
+.encontrate ul li img
+{
+ width: 100%;
+}
+
+.encontrate .galeria
+{
+ width: 100%;
+ max-width: 1200px;
+ text-align: center;
+}
+
+.encontrate .galeria .item
+{
+ width: 350px;
+ display: inline-block;
+ margin: 10px;
+  box-shadow: 0px 0px 15px #ccc;
+}
+
+.encontrate .galeria .item:hover
+{
+ opacity: 0.9;
+ box-shadow: none;
+}
+
+.encontrate .galeria .item img
+{
+ width: 100%;
+}
+
+/* FIN ENCONTRATE */
+
 /* ANIMACIONES */
 
 @keyframes slowFadeIn {

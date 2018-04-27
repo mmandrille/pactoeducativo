@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="encontrate">
     <h1>Encontrate</h1>
     <hr>
-    {% for foto in fotos %}
-        <img src="/archivos/{{ foto.foto }}" width="33%" height="33%">
-    {% endfor %}
+    <div class="galeria">
+        {% for foto in fotos %}
+            <div class="item">
+                <a href="/archivos/{{ foto.foto }}" data-lightbox="galeria">
+                    <img src="/archivos/{{ foto.foto }}">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
