@@ -1,0 +1,52 @@
+[2018-05-02 10:24:22 -0300] [45106] [INFO] Starting gunicorn 19.7.1
+[2018-05-02 10:24:22 -0300] [45106] [INFO] Listening at: http://127.0.0.1:8000 (45106)
+[2018-05-02 10:24:22 -0300] [45106] [INFO] Using worker: sync
+[2018-05-02 10:24:22 -0300] [45110] [INFO] Booting worker with pid: 45110
+[2018-05-02 10:24:22 -0300] [45111] [INFO] Booting worker with pid: 45111
+[2018-05-02 10:24:22 -0300] [45112] [INFO] Booting worker with pid: 45112
+[2018-05-02 10:24:22 -0300] [45116] [INFO] Booting worker with pid: 45116
+[2018-05-02 10:24:22 -0300] [45115] [INFO] Booting worker with pid: 45115
+[2018-05-02 10:24:22 -0300] [45117] [INFO] Booting worker with pid: 45117
+Invalid HTTP_HOST header: 'pactoeducativo.jujuy.gob.ar'. You may need to add 'pactoeducativo.jujuy.gob.ar' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'pactoeducativo.jujuy.gob.ar'. You may need to add 'pactoeducativo.jujuy.gob.ar' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'pactoeducativo.jujuy.gob.ar'. You may need to add 'pactoeducativo.jujuy.gob.ar' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'pactoeducativo.jujuy.gob.ar'. You may need to add 'pactoeducativo.jujuy.gob.ar' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'pactoeducativo.jujuy.gob.ar'. You may need to add 'pactoeducativo.jujuy.gob.ar' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: 'pactoeducativo.jujuy.gob.ar'. You may need to add 'pactoeducativo.jujuy.gob.ar' to ALLOWED_HOSTS.
+[2018-05-02 13:37:31 +0000] [45111] [INFO] Worker exiting (pid: 45111)
+[2018-05-02 13:37:31 +0000] [45112] [INFO] Worker exiting (pid: 45112)
+[2018-05-02 13:37:31 +0000] [45115] [INFO] Worker exiting (pid: 45115)
+[2018-05-02 10:37:31 -0300] [45106] [INFO] Handling signal: term
+[2018-05-02 13:37:31 +0000] [45116] [INFO] Worker exiting (pid: 45116)
+[2018-05-02 13:37:31 +0000] [45117] [INFO] Worker exiting (pid: 45117)
+[2018-05-02 13:37:31 +0000] [45110] [INFO] Worker exiting (pid: 45110)
+[2018-05-02 10:37:32 -0300] [45106] [INFO] Shutting down: Master
+[2018-05-02 10:37:33 -0300] [45225] [INFO] Starting gunicorn 19.7.1
+[2018-05-02 10:37:33 -0300] [45225] [INFO] Listening at: http://127.0.0.1:8000 (45225)
+[2018-05-02 10:37:33 -0300] [45225] [INFO] Using worker: sync
+[2018-05-02 10:37:33 -0300] [45232] [INFO] Booting worker with pid: 45232
+[2018-05-02 10:37:33 -0300] [45233] [INFO] Booting worker with pid: 45233
+[2018-05-02 10:37:33 -0300] [45239] [INFO] Booting worker with pid: 45239
+[2018-05-02 10:37:34 -0300] [45240] [INFO] Booting worker with pid: 45240
+[2018-05-02 10:37:34 -0300] [45242] [INFO] Booting worker with pid: 45242
+[2018-05-02 10:37:34 -0300] [45244] [INFO] Booting worker with pid: 45244
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+[2018-05-02 13:58:51 +0000] [45242] [INFO] Worker exiting (pid: 45242)
+[2018-05-02 13:58:51 +0000] [45239] [INFO] Worker exiting (pid: 45239)
+[2018-05-02 10:58:51 -0300] [45225] [INFO] Handling signal: term
+[2018-05-02 13:58:51 +0000] [45240] [INFO] Worker exiting (pid: 45240)
+[2018-05-02 13:58:51 +0000] [45233] [INFO] Worker exiting (pid: 45233)
+[2018-05-02 13:58:51 +0000] [45232] [INFO] Worker exiting (pid: 45232)
+[2018-05-02 13:58:51 +0000] [45244] [INFO] Worker exiting (pid: 45244)
+[2018-05-02 10:58:51 -0300] [45225] [INFO] Shutting down: Master
+[2018-05-02 10:58:53 -0300] [45427] [INFO] Starting gunicorn 19.7.1
+[2018-05-02 10:58:53 -0300] [45427] [INFO] Listening at: http://127.0.0.1:8000 (45427)
+[2018-05-02 10:58:53 -0300] [45427] [INFO] Using worker: sync
+[2018-05-02 10:58:53 -0300] [45434] [INFO] Booting worker with pid: 45434
+[2018-05-02 10:58:53 -0300] [45435] [INFO] Booting worker with pid: 45435
+[2018-05-02 10:58:53 -0300] [45437] [INFO] Booting worker with pid: 45437
+[2018-05-02 10:58:53 -0300] [45439] [INFO] Booting worker with pid: 45439
+[2018-05-02 10:58:53 -0300] [45443] [INFO] Booting worker with pid: 45443
+[2018-05-02 10:58:53 -0300] [45444] [INFO] Booting worker with pid: 45444

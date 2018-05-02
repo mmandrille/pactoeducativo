@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'sp0vbu#+!hhlw+i(9pz*%n@(q42o+5bzdx%=+5m4l+eb34u$2a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.1.87', 'localhost', 'http://127.0.0.1/', 'marca.jujuy.gob.ar']
+ALLOWED_HOSTS = ['192.168.1.87', 'localhost', 'http://127.0.0.1/', 'pactoeducativo.jujuy.gob.ar']
 
 
 # Application definition
@@ -130,6 +130,7 @@ STATIC_URL = '/static/'
 BASE_DIR = os.path.realpath(os.path.dirname(__file__))[:-14]
 MEDIA_URL = 'archivos/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "archivos")
+STATIC_ROOT = '/opt/pactoeducativo/pactoeducativo/static'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
