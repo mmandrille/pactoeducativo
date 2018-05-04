@@ -50,3 +50,54 @@ Not Found: /favicon.ico
 [2018-05-02 10:58:53 -0300] [45439] [INFO] Booting worker with pid: 45439
 [2018-05-02 10:58:53 -0300] [45443] [INFO] Booting worker with pid: 45443
 [2018-05-02 10:58:53 -0300] [45444] [INFO] Booting worker with pid: 45444
+[2018-05-04 08:36:22 +0000] [45444] [INFO] Worker exiting (pid: 45444)
+[2018-05-04 08:36:22 +0000] [45435] [INFO] Worker exiting (pid: 45435)
+[2018-05-04 08:36:22 +0000] [45437] [INFO] Worker exiting (pid: 45437)
+[2018-05-04 08:36:22 +0000] [45439] [INFO] Worker exiting (pid: 45439)
+[2018-05-04 08:36:22 +0000] [45443] [INFO] Worker exiting (pid: 45443)
+[2018-05-04 08:36:22 +0000] [45434] [INFO] Worker exiting (pid: 45434)
+[2018-05-04 05:36:22 -0300] [45427] [INFO] Handling signal: term
+[2018-05-04 05:36:22 -0300] [45427] [INFO] Shutting down: Master
+[2018-05-04 05:36:25 -0300] [4898] [INFO] Starting gunicorn 19.7.1
+[2018-05-04 05:36:25 -0300] [4898] [INFO] Listening at: http://127.0.0.1:8000 (4898)
+[2018-05-04 05:36:25 -0300] [4898] [INFO] Using worker: sync
+[2018-05-04 05:36:25 -0300] [4915] [INFO] Booting worker with pid: 4915
+[2018-05-04 05:36:26 -0300] [4916] [INFO] Booting worker with pid: 4916
+[2018-05-04 05:36:26 -0300] [4917] [INFO] Booting worker with pid: 4917
+[2018-05-04 05:36:26 -0300] [4918] [INFO] Booting worker with pid: 4918
+[2018-05-04 05:36:26 -0300] [4919] [INFO] Booting worker with pid: 4919
+[2018-05-04 05:36:26 -0300] [4920] [INFO] Booting worker with pid: 4920
+[2018-05-04 08:37:04 +0000] [4917] [INFO] Worker exiting (pid: 4917)
+[2018-05-04 08:37:04 +0000] [4919] [INFO] Worker exiting (pid: 4919)
+[2018-05-04 08:37:04 +0000] [4920] [INFO] Worker exiting (pid: 4920)
+[2018-05-04 08:37:04 +0000] [4915] [INFO] Worker exiting (pid: 4915)
+[2018-05-04 08:37:04 +0000] [4916] [INFO] Worker exiting (pid: 4916)
+[2018-05-04 08:37:04 +0000] [4918] [INFO] Worker exiting (pid: 4918)
+[2018-05-04 05:37:04 -0300] [4898] [INFO] Handling signal: term
+[2018-05-04 05:37:04 -0300] [4898] [INFO] Shutting down: Master
+[2018-05-04 05:37:06 -0300] [4974] [INFO] Starting gunicorn 19.7.1
+[2018-05-04 05:37:06 -0300] [4974] [INFO] Listening at: http://127.0.0.1:8000 (4974)
+[2018-05-04 05:37:06 -0300] [4974] [INFO] Using worker: sync
+[2018-05-04 05:37:06 -0300] [4981] [INFO] Booting worker with pid: 4981
+[2018-05-04 05:37:06 -0300] [4983] [INFO] Booting worker with pid: 4983
+[2018-05-04 05:37:06 -0300] [4985] [INFO] Booting worker with pid: 4985
+[2018-05-04 05:37:06 -0300] [4988] [INFO] Booting worker with pid: 4988
+[2018-05-04 05:37:06 -0300] [4989] [INFO] Booting worker with pid: 4989
+[2018-05-04 05:37:06 -0300] [4991] [INFO] Booting worker with pid: 4991
+[2018-05-04 08:42:42 +0000] [4989] [INFO] Worker exiting (pid: 4989)
+[2018-05-04 08:42:42 +0000] [4991] [INFO] Worker exiting (pid: 4991)
+[2018-05-04 08:42:42 +0000] [4988] [INFO] Worker exiting (pid: 4988)
+[2018-05-04 08:42:42 +0000] [4985] [INFO] Worker exiting (pid: 4985)
+[2018-05-04 08:42:42 +0000] [4983] [INFO] Worker exiting (pid: 4983)
+[2018-05-04 08:42:42 +0000] [4981] [INFO] Worker exiting (pid: 4981)
+[2018-05-04 05:42:42 -0300] [4974] [INFO] Handling signal: term
+[2018-05-04 05:42:42 -0300] [4974] [INFO] Shutting down: Master
+[2018-05-04 05:42:44 -0300] [5103] [INFO] Starting gunicorn 19.7.1
+[2018-05-04 05:42:44 -0300] [5103] [INFO] Listening at: http://127.0.0.1:8001 (5103)
+[2018-05-04 05:42:44 -0300] [5103] [INFO] Using worker: sync
+[2018-05-04 05:42:44 -0300] [5110] [INFO] Booting worker with pid: 5110
+[2018-05-04 05:42:44 -0300] [5111] [INFO] Booting worker with pid: 5111
+[2018-05-04 05:42:44 -0300] [5112] [INFO] Booting worker with pid: 5112
+[2018-05-04 05:42:44 -0300] [5114] [INFO] Booting worker with pid: 5114
+[2018-05-04 05:42:44 -0300] [5117] [INFO] Booting worker with pid: 5117
+[2018-05-04 05:42:44 -0300] [5120] [INFO] Booting worker with pid: 5120
