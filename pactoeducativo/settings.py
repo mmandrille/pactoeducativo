@@ -127,11 +127,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #Configuraciones Propias
-BASE_DIR = os.path.realpath(os.path.dirname(__file__))[:-14]
 MEDIA_URL = 'archivos/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "archivos")
-STATIC_ROOT = '/opt/pactoeducativo/pactoeducativo/static'
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
