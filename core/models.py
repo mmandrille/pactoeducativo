@@ -5,6 +5,9 @@ from tinymce.models import HTMLField
 #Agregar Modulos personales
 
 #Elementos del FAQ
+class Texto(models.Model):
+    texto = HTMLField()
+
 class Faq(models.Model):
     orden = models.IntegerField()
     pregunta = models.CharField('Titulo', max_length=200)

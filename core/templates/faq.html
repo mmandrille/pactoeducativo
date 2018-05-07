@@ -3,7 +3,11 @@
 {% block content %}
 <div class="quees">
     <h1>¿Que es #PactoSxE?</h1>
-    <p class="texto-explicativo">TEXTO EXPLICATIVO - TEXTO EXPLICATIVO - TEXTO EXPLICATIVO</p>
+    <p class="texto-explicativo"> 
+        {% for t in textos %}
+            {{ t.texto|safe }}
+        {% endfor %}
+    </p>
     <hr>
 
     <div class="seccion-preguntas-frecuentes">

@@ -7,13 +7,15 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 #Agregamos modulos personales
 from .models import Faq
+from .models import Texto
 
 def home(request):
     return render(request, 'home.html', { })
 
 def faq(request):
+    textos = Texto.objects.all()
     faqs = Faq.objects.all()
-    return render(request, 'faq.html', {'faqs' : faqs })
+    return render(request, 'faq.html', {'textos' : textos, 'faqs' : faqs })
 
 def signup(request):
     if request.method == 'POST':
