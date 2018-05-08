@@ -3,6 +3,7 @@ import datetime
 from django.db import models
 from django.contrib.auth.models import *
 from django.utils import timezone
+from tinymce.models import HTMLField
 
 #Create your models here.
 class Evento(models.Model):
