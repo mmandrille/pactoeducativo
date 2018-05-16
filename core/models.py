@@ -6,6 +6,7 @@ from tinymce.models import HTMLField
 
 #Elementos del FAQ
 class Texto(models.Model):
+    orden = models.IntegerField()
     texto = HTMLField()
 
 class Faq(models.Model):

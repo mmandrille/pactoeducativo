@@ -2,6 +2,7 @@
 import datetime
 from django.db import models
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 
 # Create your models here.
 class Subforo(models.Model):
@@ -17,7 +18,7 @@ class Thread(models.Model):
 	autor = models.ForeignKey(User, on_delete=models.CASCADE)
 	fecha_creacion = models.DateField(default=datetime.date.today)
 	nombre = models.CharField(max_length=50, unique=True)
-	body = models.CharField(max_length=500)
+	body = HTMLField()
 	def __str__(self):
 		return self.nombre + ": " + " -Autor: " + self.autor.username + ")"
 	def link(self):
