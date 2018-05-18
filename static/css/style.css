@@ -1122,34 +1122,36 @@ section.marca
 
 /* AGENDA CULTURAL */
 
-.eventos
+.eventos li
 {
-    text-align: center;
-}
+    list-style-type: none;
+    width: 80%;
 
-.eventos .evento
-{
-    width: 100px;
-    display: inline-block;
     border-radius: 10px;
     overflow: hidden;
     margin-right: 20px;
+    margin-bottom: 20px;
     vertical-align: top;
 }
 
-.eventos .evento .fecha
+.eventos .foto
 {
-    text-align: center;
-    font-size: 1.5em;
-    background: #96755c;
-    color: white;
+    float: left;
+    width: 20vh;
 }
 
-.evento .fecha span.dia
+.eventos .foto img
 {
-    font-size: 1.1em;
-    font-weight: bold;
+    height: 20vh;
 }
+
+.eventos .info
+{
+    text-align: left;
+    float: right;
+    width: 70%;
+}
+
 
 .evento .contenido
 {
@@ -2341,7 +2343,7 @@ section.pacto-social
 .menu-principal .icono-noticias
 {
  background-image: url(../img/icono-noticias.png);
-     background-color: #c72a75;
+     background-color: #e72d77;
 }
 
 .menu-principal .icono-encontrate
@@ -2897,22 +2899,18 @@ section.pagina-registro hr{
 
 .encontrate
 {
+ text-align: center;
  margin-bottom: 30px;
 }
 
-.encontrate h1
-{
- text-align: center;
-}
-
-.encontrate ul
+.encontrate .galeria ul
 {
  list-style: none;
  padding-top: 20px;
  text-align: center;
 }
 
-.encontrate ul li
+.encontrate .galeria ul li
 {
     text-align: center;
     display: inline-block;
@@ -2924,13 +2922,13 @@ section.pagina-registro hr{
     border-radius: 2px;
 }
 
-.encontrate ul li h2
+.encontrate .galeria ul li h2
 {
      margin-top: 0px;
     color: #1591cd;
 }
 
-.encontrate ul li img
+.encontrate .galeria ul li img
 {
  width: 100%;
 }

@@ -1122,34 +1122,36 @@ section.marca
 
 /* AGENDA CULTURAL */
 
-.eventos
+.eventos li
 {
-    text-align: center;
-}
+    list-style-type: none;
+    width: 80%;
 
-.eventos .evento
-{
-    width: 100px;
-    display: inline-block;
     border-radius: 10px;
     overflow: hidden;
     margin-right: 20px;
+    margin-bottom: 20px;
     vertical-align: top;
 }
 
-.eventos .evento .fecha
+.eventos .foto
 {
-    text-align: center;
-    font-size: 1.5em;
-    background: #96755c;
-    color: white;
+    float: left;
+    width: 20vh;
 }
 
-.evento .fecha span.dia
+.eventos .foto img
 {
-    font-size: 1.1em;
-    font-weight: bold;
+    height: 20vh;
 }
+
+.eventos .info
+{
+    text-align: left;
+    float: right;
+    width: 70%;
+}
+
 
 .evento .contenido
 {
