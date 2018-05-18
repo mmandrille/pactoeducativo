@@ -2,8 +2,11 @@
 
 {% block content %}
 <div class="encontrate">
-    <h1>Encontrate</h1>
-    <hr>
+    <div class "info_album">
+        <h1>{{ album.nombre }}</h1>
+        {{ album.descripcion | safe }}
+    </div>
+
     <div class="galeria">
         {% for foto in fotos %}
             <div class="item">

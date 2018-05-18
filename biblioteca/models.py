@@ -11,8 +11,8 @@ from django.utils import timezone
 # Create your models here.
 class Archivo(models.Model):
     tipos_de_archivos = (
-        (1, 'Biblioteca'),
-        (2, 'Insumos'),
+        (1, 'Documentos Pacto 2018'),
+        (2, 'Antecedente'),
     )
     tipo = models.IntegerField(choices=tipos_de_archivos, default=1)
     nombre = models.CharField('Titulo', max_length=200)

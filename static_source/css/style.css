@@ -2340,8 +2340,8 @@ section.pacto-social
 
 .menu-principal .icono-noticias
 {
- background-image: url(../img/icono-insumos.png);
-     background-color: #c72a75;
+ background-image: url(../img/icono-noticias.png);
+     background-color: #e72d77;
 }
 
 .menu-principal .icono-encontrate
@@ -2897,22 +2897,18 @@ section.pagina-registro hr{
 
 .encontrate
 {
+ text-align: center;
  margin-bottom: 30px;
 }
 
-.encontrate h1
-{
- text-align: center;
-}
-
-.encontrate ul
+.encontrate .galeria ul
 {
  list-style: none;
  padding-top: 20px;
  text-align: center;
 }
 
-.encontrate ul li
+.encontrate .galeria ul li
 {
     text-align: center;
     display: inline-block;
@@ -2924,13 +2920,13 @@ section.pagina-registro hr{
     border-radius: 2px;
 }
 
-.encontrate ul li h2
+.encontrate .galeria ul li h2
 {
      margin-top: 0px;
     color: #1591cd;
 }
 
-.encontrate ul li img
+.encontrate .galeria ul li img
 {
  width: 100%;
 }

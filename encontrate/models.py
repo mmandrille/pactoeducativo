@@ -7,11 +7,12 @@ from django.contrib.auth.models import *
 from django.contrib.auth.models import User
 from pactoeducativo.settings import MEDIA_URL
 from django.utils import timezone
+from tinymce.models import HTMLField
 
 # Create your models here.
 class Album(models.Model):
     nombre = models.CharField('Titulo', max_length=200)
-    descripcion = models.TextField()
+    descripcion = HTMLField()
     portada = models.FileField(upload_to='fotos/')
     pub_date = models.DateTimeField('Fecha de Publicacion', default=timezone.now)
     def __str__(self):
@@ -20,4 +21,3 @@ class Album(models.Model):
 class Foto(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     foto = models.FileField(upload_to='fotos/')
-    pub_date = models.DateTimeField('Fecha de Publicacion', default=timezone.now)
