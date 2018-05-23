@@ -36,4 +36,5 @@ urlpatterns = [
     path('calendario/', include('calendario.urls')),
     path('biblioteca/', include('biblioteca.urls')),
     path('encontrate/', include('encontrate.urls')),
+    path('encuestas/', include('encuestas.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

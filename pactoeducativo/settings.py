@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Modulos instalados
     'tinymce',
+    'nested_inline',
     #Modulos Personales
     'core.apps.CoreConfig',
     'calendario.apps.CalendarioConfig',
     'foro.apps.ForoConfig',
     'biblioteca.apps.BibliotecaConfig',
     'encontrate.apps.EncontrateConfig',
+    'encuestas.apps.EncuestasConfig',
 ]
 
 
