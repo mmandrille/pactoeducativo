@@ -17,8 +17,8 @@ position: absolute;
     height: 70px;
     z-index: 11;
     background-color: #1591cd;
-    box-shadow: 0px 3px 25px #000000a3;
-    top: 0px;
+    box-shadow: 0 3px 25px #000000a3;
+    top: 0;
 }
 
 header.sticky
@@ -38,11 +38,40 @@ main {
 
 .portada
 {
-    background-image: url(../img/header.jpg);
+    /*background-image: url(../img/header.jpg);*/
     height: 200px;
     background-size: cover;
-    box-shadow: 0px 0px 30px #1c4d657a;
+    box-shadow: 0 0 30px #1c4d657a;
+    overflow: hidden;
+    text-align: center;
+    width: auto;
 }
+    .portada img{
+        height: 200px;
+        /*height: 230px; !* Resolución monitor 21' *!*/
+    }
+
+    .portada>.mobile{
+        display: none;
+    }
+
+    @media screen and (orientation: portrait){
+        .portada{
+            height: auto;
+        }
+        .portada img{
+            display: none;
+        }
+        .portada>.mobile{
+            display: block;
+            text-align: center;
+        }
+        .portada>.mobile img{
+            display: inline-block;
+            width: 100%;
+            height: auto;
+        }
+    }
 
 .contenedor
 {
@@ -88,7 +117,7 @@ ul.menu-principal
 {
  list-style: none;
  text-align: center;
- padding: 0px;
+ padding: 0;
 }
 
 ul.menu-principal li
@@ -165,7 +194,7 @@ ul.login li a:focus{
 
 .cont
 {
-  /*  box-shadow: 0px 0px 20px #000;*/
+  /*  box-shadow: 0 0 20px #000;*/
 }
 
 .slider-header
@@ -411,7 +440,7 @@ ul.nav li.desplegable a
 ul.nav li a{
     color: white;    
     font-size: 14px;
-    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.59);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.59);
     padding-top: 11px;
     padding-bottom: 12px;
 }
@@ -485,7 +514,7 @@ ul.nav li:hover span.triangle
     padding: 0;
     position: absolute;
     top: 69px;
-    left: 0px;
+    left: 0;
 }
 
 .navbar-collapse.mobile-only .navbar-nav
@@ -554,7 +583,7 @@ header .btn-default
     background: #00833e;
     color: white;
     text-transform: uppercase;
-    border-radius: 0px;
+    border-radius: 0;
     font-size: 1.2em;
     padding: 10px 8px;
     text-align: center;
@@ -564,7 +593,7 @@ header .btn-default
     margin: auto;
     display: block;
     max-width: 170px;
-    box-shadow: 0px 0px 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
 }
 
 .btn.ver-video span
@@ -612,7 +641,7 @@ header .btn-default
 .main-items .owl-item
 {
     display: inline-block;
-    padding: 0px 20px;
+    padding: 0 20px;
     z-index: 9;
 }
 
@@ -623,7 +652,7 @@ header .btn-default
     height: calc(100% - 30px);
     width: 40px;
     cursor: pointer;
-    left: 0px;
+    left: 0;
     background: white;
 }
 
@@ -634,7 +663,7 @@ header .btn-default
     height: calc(100% - 30px);
     width: 40px;
     cursor: pointer;
-    right: 0px;
+    right: 0;
     background: white;
 }
 
@@ -654,7 +683,7 @@ header .btn-default
     position: relative;
     padding-top: 2px;
     left: 7px;
-    box-shadow: 0px 0px 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
     top: calc(50% - 35px);
 }
 
@@ -674,7 +703,7 @@ header .btn-default
     position: relative;
     padding-top: 2px;
     right: 5px;
-    box-shadow: 0px 0px 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
     top: calc(50% - 35px);
 }
 
@@ -695,20 +724,20 @@ header .btn-default
     margin-right: 8px;
     cursor: pointer;
     background: #eee;
-    box-shadow: 0px 0px 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
 }
 
 .main-items .owl-pagination .owl-page.active
 {
     background: #dd3a5d;
-    box-shadow: 0px 0px 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
 }
 
 .main-items .col-md-6,
 .main-items .col-md-3,
 .main-items .col-md-9
 {
-    padding-right: 0px;
+    padding-right: 0;
 }
 
 .main-items .col-md-2
@@ -718,7 +747,7 @@ header .btn-default
 
 .main-items.gobierno-territorio
 {
-  /*  box-shadow: 0px 0px 15px #d6cbc4;
+  /*  box-shadow: 0 0 15px #d6cbc4;
     background: rgba(255, 255, 255, 0.3);*/
     border-radius: 5px;
     margin-top: 50px;
@@ -773,7 +802,7 @@ header .btn-default
     font-size: 1.3em;
     text-transform: uppercase;
     font-weight: normal;
-    text-shadow: 0px 0px 10px #2d6077;
+    text-shadow: 0 0 10px #2d6077;
 }
 
 .main-items.gobierno-territorio span.glyphicon-triangle-bottom
@@ -793,7 +822,7 @@ header .btn-default
     margin-top: 15px;    
     border-radius: 7px;
     overflow: hidden;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     opacity: 0.95;
 }
 
@@ -834,7 +863,7 @@ header .btn-default
     position: relative;
     top: 165px;
     background-color: rgba(0, 0, 0, 0.51);
-    margin: 0px;
+    margin: 0;
     margin-left: -15px;
     padding-bottom: 15px;
     margin-right: -15px;
@@ -906,7 +935,7 @@ header .btn-default
 {
 /*  cursor: pointer; */
     opacity: 1;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .main-items .item .image
@@ -915,7 +944,7 @@ header .btn-default
     height: 100%;
     background-size: cover !important;
     background-position: center !important;
-    box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.7) inset;
 }
 
 .main-items .item.color1, .main-items.gobierno-territorio .item .color1,
@@ -1018,7 +1047,7 @@ header .btn-default
 .main-items .item.height2 .image
 {
     height: 500px;
-    background-position-y: 0px;
+    background-position-y: 0;
     background-size: 100% !important;
     
     -webkit-transition: height 300ms ease-in, background-size 600ms linear;
@@ -1184,8 +1213,7 @@ footer
 {
     background: url(../img/silueta_footer.png);
     height: 150px;
-    background-repeat-x: repeat;
-    background-repeat-y: no-repeat;
+    background-repeat: repeat-x;
     background-size: 850px;
     background-position-x: 50%;
 }
@@ -1195,7 +1223,7 @@ footer
     background: #bc3248;
     display: table;
     width: 100%;
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 5px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#801c1a+0,dd3a5d+100 */
 background: #801c1a; /* Old browsers */
@@ -1315,7 +1343,7 @@ footer .redes-sociales span
     background-repeat: no-repeat;
     background-size: 95%;
     background-position: center;
-    margin: 0px 5px;
+    margin: 0 5px;
     cursor: pointer;
     background-color: #00000036;
     border-radius: 50%;
@@ -1367,7 +1395,7 @@ footer ul.secciones
     width: 150px;
     margin: auto;
     font-size: 1.1em;
-    padding: 0px;
+    padding: 0;
     line-height: 1.6;
     margin-bottom: 35px;
 }
@@ -1387,7 +1415,7 @@ footer ul.noticias
 {
     list-style: none;
     text-align: center;
-    padding: 0px;
+    padding: 0;
     margin-top: 15px;
 }
 
@@ -1495,7 +1523,7 @@ footer h5{
     position: absolute;
     z-index: 10;
     color: white;
-    text-shadow: 0px 0px 10px #000;
+    text-shadow: 0 0 10px #000;
     top: 270px;
     left: 25px;
     text-transform: uppercase;
@@ -1520,7 +1548,7 @@ footer h5{
     vertical-align: top;
     margin: 10px;
     cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     
     -webkit-transition: width 300ms ease-in;
     -moz-transition: width 300ms ease-in;
@@ -1593,7 +1621,7 @@ footer h5{
     color: #fff;
     font-family: 'Helvetica';
     font-weight: bold;
-    padding: 5px 0px;
+    padding: 5px 0;
 }
 
 .agenda-cultural-items .item .lugar
@@ -1602,7 +1630,7 @@ footer h5{
     font-size: 1.2em;
     font-family: 'Helvetica';
     font-weight: 300;
-    padding: 7px 0px;
+    padding: 7px 0;
 }
 
 .agenda-cultural-items .item h3
@@ -1669,7 +1697,7 @@ ul#agenda-seleccion-lugar
 {
     list-style: none;
     max-width: 500px;
-    padding: 0px;
+    padding: 0;
     margin: auto;
     font-size: 1.5em;
     text-align: center;
@@ -1705,7 +1733,7 @@ ul#agenda-seleccion-lugar li button:hover
     color: #fff;
     background-color: #386d86;
     padding: 6px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 /* FIN AGENDA CULTURAL */
@@ -1715,7 +1743,7 @@ ul#agenda-seleccion-lugar li button:hover
 .sitios-turisticos
 {
     display: table;
-    padding: 0px 3px;
+    padding: 0 3px;
     width: 100%;
     max-width: 1024px;
     margin: auto;
@@ -1779,10 +1807,10 @@ ul#agenda-seleccion-lugar li button:hover
 }
 
 .sitios-turisticos .item .contenido p{
-    max-height: 0px;
-    margin: 0px;
+    max-height: 0;
+    margin: 0;
     overflow: hidden;
-    padding-bottom 0px;
+    padding-bottom: 0;
 }
 
 .sitios-turisticos .item:hover .contenido p{
@@ -1799,7 +1827,7 @@ ul#agenda-seleccion-lugar li button:hover
 .sitios-turisticos .item .contenido .texto
 {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: calc(100% - 16px);
     background-color: #333;
     color: white;
@@ -1810,7 +1838,7 @@ ul#agenda-seleccion-lugar li button:hover
 {
     font-size: 1.5em;
     margin-top: 10px;
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 /* FIN TU PROVINCIA */
@@ -1846,7 +1874,7 @@ body.transparencia h1
     min-height: 275px;
     padding-left: 5px;
     padding-right: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding-bottom: 20px;
 }
 
@@ -1877,7 +1905,7 @@ body.transparencia h1
 
 .seccion-transparencia .item:hover .contenido
 {
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .seccion-transparencia .item button
@@ -1899,16 +1927,16 @@ body.transparencia h1
     position: relative;
     top: -10px;
     padding-top: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .transparencia-contenedores .item
 {
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;    
     background-color: #7f0d0d;
     color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     opacity: 0;
     
     -webkit-transition: opacity 500ms linear;
@@ -1936,7 +1964,7 @@ body.transparencia h1
 .transparencia-contenedores .item h2
 {
     text-align: center;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-top: 10px;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -2087,7 +2115,7 @@ body.transparencia h1
     margin:auto;
     margin-top: 40px;
     font-size: 1.2em;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
 
 .main-items.transparencia .contenedor-link a{
@@ -2126,7 +2154,7 @@ body.transparencia h1
 .pacto-social
 {
     background-color: white;
-    box-shadow: 0px 0px 20px #bbb;
+    box-shadow: 0 0 20px #bbb;
 }
 
 .pacto-social .jumbo img
@@ -2149,7 +2177,7 @@ body.transparencia h1
 
 .pacto-social .jumbo ul.lista
 {
-    padding: 0px;
+    padding: 0;
     list-style: none;
 }
 
@@ -2158,7 +2186,7 @@ body.transparencia h1
     margin: 10px;
     padding: 10px;
     background-color: whitesmoke;
-    box-shadow: 0px 0px 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
     border-radius: 2px;
 }
 
@@ -2166,7 +2194,7 @@ body.transparencia h1
 {
     margin: 20px 25px;
     border: none;
-    box-shadow: 0px 0px 15px #ddd;
+    box-shadow: 0 0 15px #ddd;
 }
 
 .pacto-social h2.center
@@ -2212,7 +2240,7 @@ section.pacto-social
     text-align: left;
     font-weight: normal;
     line-height: 1.4;
-    box-shadow: 0px 0px 10px #888;
+    box-shadow: 0 0 10px #888;
 }
 
 .pacto-social .banner
@@ -2222,14 +2250,14 @@ section.pacto-social
     color: white;
     font-size: 2em;
     padding: 15px;
-    box-shadow: 0px 0px 15px #bbb;
+    box-shadow: 0 0 15px #bbb;
 }
 
 .pacto-social .panel-heading
 {
     background: #119c4a;
     color: white;
-    box-shadow: 0px 0px 10px #bbb;
+    box-shadow: 0 0 10px #bbb;
 }
 
 .pacto-social .panel-heading.color2
@@ -2256,7 +2284,7 @@ section.pacto-social
     font-weight: normal;
     margin-left: 10px;
     margin-right: 10px;
-    box-shadow: 0px 0px 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
     margin-bottom: 20px;
 }
 
@@ -2372,14 +2400,14 @@ section.pacto-social
 {max-width: 900px;
     margin: auto;
     padding: 10px 40px;
-    box-shadow: 0px 0px 20px #00000026;
+    box-shadow: 0 0 20px #00000026;
     border-radius: 10px;
     margin-bottom: 50px;}
 
 .quees .preguntas-frecuentes
 {
  list-style: none;
- padding-left: 0px;
+ padding-left: 0;
 }
 
 .quees .collapse.in
@@ -2415,7 +2443,7 @@ section.pacto-social
 .lista-archivos
 {
     text-align: center;
-    padding-left: 0px;
+    padding-left: 0;
     margin-top: 20px;
     width: 100%;
     max-width: 1200px;
@@ -2444,7 +2472,7 @@ section.pacto-social
 .lista-archivos li .img{
    background: #000;
    border-radius: 5px;
-box-shadow: 0px 0px 13px #2c5b7173;
+box-shadow: 0 0 13px #2c5b7173;
    /*max-height: 30vh;*/
    overflow: hidden;
 }
@@ -2468,7 +2496,7 @@ box-shadow: 0px 0px 13px #2c5b7173;
 .lista-archivos li h2{
     opacity: 0;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
 }
 
@@ -2549,7 +2577,7 @@ box-shadow: 0px 0px 13px #2c5b7173;
 
 .mostrar-archivo .padding-top
 {
-   padding-top: 0px;
+   padding-top: 0;
 }
 
 .mostrar-archivo p.descripcion
@@ -2596,12 +2624,12 @@ box-shadow: 0px 0px 13px #2c5b7173;
 {
      max-width: 900px;
     margin: auto;
-    box-shadow: 0px 0px 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
 }
 
 .foro .subforo h2
 {
- margin: 0px;
+ margin: 0;
  background: #1591cd;
     color: white !important;
     font-size: 18px;
@@ -2618,7 +2646,7 @@ box-shadow: 0px 0px 13px #2c5b7173;
      height: 40px;
     margin-right: 15px;
     border-radius: 3px;
-    box-shadow: 0px 0px 10px #1d86b9;
+    box-shadow: 0 0 10px #1d86b9;
 }
 
 .foro .subforo .threads
@@ -2648,7 +2676,7 @@ box-shadow: 0px 0px 13px #2c5b7173;
 {
      max-width: 1024px;
     margin: auto;
-    box-shadow: 0px 0px 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
     padding: 5px 25px;
     margin-bottom: 40px;
     margin-top: 25px;
@@ -2697,7 +2725,7 @@ section.login .login-container
     max-width: 400px;
     margin: auto;
     border-radius: 10px;
-    padding: 0px;
+    padding: 0;
     z-index: 1;
     color: white; 
 }
@@ -2722,7 +2750,7 @@ section.login .input-group
 
 section.login label
 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     font-weight: normal;
 }
 
@@ -2842,7 +2870,7 @@ background: #1591cd;
     padding: 50px 40px;
     margin: auto;
     border-radius: 15px;
-    box-shadow: 0px 0px 10px #a03066 inset;
+    box-shadow: 0 0 10px #a03066 inset;
     border: 1px solid #a72061;
     margin-top: 60px;
 }
@@ -2865,7 +2893,7 @@ background: #1591cd;
 }
 
 .seccion-registro label{
-   margin-bottom: 0px;
+   margin-bottom: 0;
 }
 
 .pagina-registro
@@ -2915,7 +2943,7 @@ section.pagina-registro hr{
     text-align: center;
     display: inline-block;
     width: auto;
-    box-shadow: 0px 0px 15px #ccc;
+    box-shadow: 0 0 15px #ccc;
     width: 30%;
     max-width: 400px;
     padding: 10px;
@@ -2924,7 +2952,7 @@ section.pagina-registro hr{
 
 .encontrate .galeria ul li h2
 {
-     margin-top: 0px;
+     margin-top: 0;
     color: #1591cd;
 }
 
@@ -2945,7 +2973,7 @@ section.pagina-registro hr{
  width: 350px;
  display: inline-block;
  margin: 10px;
-  box-shadow: 0px 0px 15px #ccc;
+  box-shadow: 0 0 15px #ccc;
 }
 
 .encontrate .galeria .item:hover
@@ -3011,7 +3039,7 @@ section.pagina-registro hr{
 {
     #slider-container
     {
-        background-position-y: 0px;
+        background-position-y: 0;
         height: 450px;
     }
     
@@ -3067,7 +3095,7 @@ section.pagina-registro hr{
     }
     #slider-container
     {
-        background-position-y: 0px;
+        background-position-y: 0;
         height: 350px;
     }
     
