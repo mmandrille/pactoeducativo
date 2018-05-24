@@ -2,11 +2,11 @@ from django.contrib import admin
 #Modulos extras
 from nested_inline.admin import NestedStackedInline, NestedModelAdmin
 # Register your models here.
-from .models import Encuesta, Pregunta, Respuesta
+from .models import Encuesta, Pregunta, Opcion, Respuesta
 
 #Definimos inline
-class RespuestaInline(NestedStackedInline):
-    model = Respuesta
+class OpcionInline(NestedStackedInline):
+    model = Opcion
     extra = 1
     fk_name = 'pregunta'
 
@@ -14,7 +14,7 @@ class PreguntaInline(NestedStackedInline):
     model = Pregunta
     extra = 1
     fk_name = 'encuesta'
-    inlines = [RespuestaInline]
+    inlines = [OpcionInline]
 
 class EncuestaAdmin(NestedModelAdmin):
     model = Encuesta
