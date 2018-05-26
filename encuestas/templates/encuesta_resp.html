@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="encuesta">
+    <h1>{{ encuesta.titulo }}</h1>
+    <p>{{ encuesta.descripcion | safe }}</p>
+    <hr>
+    <p>Gracias por tomarte el tiempo de responder nuestra encuesta!</p>
+</div>
+{% endblock %}

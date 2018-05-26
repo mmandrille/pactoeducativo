@@ -2989,6 +2989,16 @@ section.pagina-registro hr{
 
 /* FIN ENCONTRATE */
 
+/* ENCUESTA */
+
+.encuesta
+{
+ text-align: center;
+ margin-bottom: 30px;
+}
+
+/* FIN ENCUESTA */
+
 /* ANIMACIONES */
 
 @keyframes slowFadeIn {
