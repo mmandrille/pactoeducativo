@@ -25,7 +25,7 @@ SECRET_KEY = 'sp0vbu#+!hhlw+i(9pz*%n@(q42o+5bzdx%=+5m4l+eb34u$2a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.87', 'localhost', 'http://127.0.0.1/', 'pactosxe.jujuy.gob.ar']
+ALLOWED_HOSTS = ['192.168.0.113', 'localhost', 'http://127.0.0.1/', 'pactosxe.jujuy.gob.ar']
 
 
 # Application definition
