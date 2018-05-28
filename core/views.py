@@ -3,11 +3,11 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 #Agregamos modulos personales
 from .models import Faq
 from .models import Texto
+from .forms import SignUpForm
 
 def home(request):
     return render(request, 'home.html', { })
@@ -19,7 +19,7 @@ def faq(request):
 
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -28,7 +28,7 @@ def signup(request):
             login(request, user)
             return redirect('/encuestas/1')
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 
 def encontrate(request):

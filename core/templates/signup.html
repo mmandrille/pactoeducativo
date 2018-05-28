@@ -1,41 +1,23 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
-<section class="seccion-registro pagina-registro">
-  <h2>Sign up</h2>
+  <section class="seccion-registro pagina-registro">
+  <h2>Registro de Usuario</h2>
   <hr>
   <form method="post">
     {% csrf_token %}
+    {% for field in form %}
+
     <div class="input-group">
-        <label for="id_username">Usuario:</label><br>
-        <input type="text" class="form-control" name="username" autofocus maxlength="150" required id="id_username" />
+      {{ field.label_tag }}<br>
+      {{ field }}
+      {% for error in field.errors %}
+        <p style="color:black">{{ error }}</p>
+      {% endfor %}
     </div>
-    
-      <div class="input-group">
-        <label for="id_email">Correo Electronico:</label><br>
-        <input type="email" class="form-control" name="email" id="id_email" maxlength="254" />
-        <small style="color: #eee; text-align: center;">A través de este correo se le informara que su cuenta fue aprobada.</small>
-      </div>
-    
-      <div class="input-group">
-        <label for="id_password1">Contraseña:</label><br>
-        <input type="password" class="form-control" name="password1" id="id_password1" required />
-      </div>
-    
-      <div class="input-group">
-        <label for="id_password2">Repetir Contraseña:</label><br>
-        <input type="password" class="form-control" name="password2" id="id_password2" required />
-      </div>
-    
-      <div class="input-group">
-        <label for="id_nombre">Nombre:</label><br>
-        <input type="text" class="form-control" name="nombre" id="id_nombre" maxlength="50" required />
-      </div>
-    
-      <div class="input-group">
-        <label for="id_apellido">Apellido:</label><br>
-        <input type="text" class="form-control" name="apellido" id="id_apellido" maxlength="50" required />
-      </div>
+
+    {% endfor %}
     <button type="submit">Registrarse</button>
   </form>
 </section>
