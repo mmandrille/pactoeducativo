@@ -2873,6 +2873,7 @@ background: #1591cd;
     box-shadow: 0 0 10px #a03066 inset;
     border: 1px solid #a72061;
     margin-top: 60px;
+
 }
 
 .seccion-registro form label
@@ -2881,10 +2882,16 @@ background: #1591cd;
    font-weight: normal;
 }
 
-.seccion-registro .input-group
+.seccion-registro form div
+{ 
+    text-align: center;
+}
+
+.seccion-registro form input
 {
-   width: 100%;
-   padding-top: 7px;
+    width: 350px;
+    padding-top: 7px;
+    align-self: center;
 }
 
 .form-control
