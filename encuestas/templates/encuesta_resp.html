@@ -6,5 +6,20 @@
     <p>{{ encuesta.descripcion | safe }}</p>
     <hr>
     <p>Gracias por tomarte el tiempo de responder nuestra encuesta!</p>
+    <hr>
+    {% for pregunta in encuesta.preguntas.all %}
+        <h2>Resultados</h2>
+        {% for opcion in pregunta.opciones.all %}
+            <p>{{ opcion.opcion }}:
+
+                {% for seleccion in selecciones %}
+                    {% if pregunta.orden == seleccion.0 and opcion.orden == seleccion.1 %}
+                        <b>{{ seleccion.2 }}</b>
+                    {% endif %}
+                {% endfor %}
+            </p>
+
+        {% endfor %}
+    {% endfor %}
 </div>
 {% endblock %}
