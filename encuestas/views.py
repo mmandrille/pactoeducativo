@@ -10,7 +10,7 @@ def encuesta(request, encuesta_id):
         respuesta.usuario = request.user
         #Recogemos todas las respuestas seleccionadas:
         for pregunta in encuesta.preguntas.all():
-                respuesta.respuestas+= request.POST[str(pregunta.id)] + ','
+                respuesta.respuestas += request.POST[str(pregunta.orden)] + ','
         respuesta.save()
 
         #Por cada opcion de cada pregunta, recolectamos la cantidad de elecciones de los distintos usuarios.
