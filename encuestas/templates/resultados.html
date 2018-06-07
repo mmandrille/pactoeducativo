@@ -2,22 +2,22 @@
 
 {% block content %}
     {% load encuestas_extras %}
-    <div class="encuesta">
-        <h1>{{ encuesta.titulo }}</h1>
-        <p>{{ encuesta.descripcion | safe }}</p>
-        <hr>
-        <p>Votos realizados: {{ encuesta.respuestas.all|length }}</p>
-        <hr>
-        {% for preg in encuesta.preguntas.all %}
-            <h3>{{ preg.pregunta }}</h3>
-            <ul<>
-            {% for opcion in preg.opciones.all %}
-                <li>{{opcion.opcion}}: {% retornar_valor resultados preg.orden opcion.orden %}</li>
+    <div class="contenedor-encuesta">
+        <div class="encuesta-titulo">
+            <h1>{{ encuesta.titulo }}</h1>
+            <p>{{ encuesta.descripcion | safe }}</p>
+            <hr>
+            <p>Votos realizados: {{ encuesta.respuestas.all|length }}</p>
+        </div>
+        <div class="encuesta-respuesta">
+            {% for preg in encuesta.preguntas.all %}
+                <h3>{{ preg.pregunta }}</h3>
+                <ul<>
+                {% for opcion in preg.opciones.all %}
+                    <li>{{opcion.opcion}}: {% retornar_valor resultados preg.orden opcion.orden %}</li>
+                {% endfor %}
+                </ul>
             {% endfor %}
-            </ul>
-        {% endfor %}
+        </div>
     </div>
-
-    {{ resultados }}
-    <hr>
 {% endblock %}
