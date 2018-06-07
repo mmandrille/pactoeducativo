@@ -7,8 +7,9 @@
     <hr>
     <p>Gracias por tomarte el tiempo de responder nuestra encuesta!</p>
     <hr>
+    <h2>Resultados</h2>
     {% for pregunta in encuesta.preguntas.all %}
-        <h2>Resultados</h2>
+        <p><b>{{ pregunta.pregunta }}</b></p>
         {% for opcion in pregunta.opciones.all %}
             <p>{{ opcion.opcion }}:
 
