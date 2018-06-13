@@ -156,3 +156,4 @@ except ImportError:
 
 #Actualizar Statics, no solo nuevas
 AWS_PRELOAD_METADATA = True
+FILE_UPLOAD_PERMISSIONS = 0o640
