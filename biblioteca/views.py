@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 #import Personales
-from .models import Archivo
+from .models import Archivo, TIPOS_DE_ARCHIVOS
 from .forms import BuscarForm
 
 # Create your views here.
@@ -13,7 +13,7 @@ def biblioteca(request):
     else:
         archivos = Archivo.objects.all()
     form = BuscarForm()
-    return render(request, 'biblioteca.html', {'archivos' : archivos, 'form' : form})
+    return render(request, 'biblioteca.html', {'archivos' : archivos, 'form' : form, 'tipos': TIPOS_DE_ARCHIVOS,})
 
 def archivo(request, archivo_id):
     archivo = Archivo.objects.get(pk=archivo_id)

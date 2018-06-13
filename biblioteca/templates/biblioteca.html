@@ -10,21 +10,26 @@
         {{ form }}
         <button type="submit">Buscar</button>
     </form>
-    
-    <div class="lista-archivos">
-        <ul class="grid">
-            {% for archivo in archivos %}
-            <li class="grid-item">
-                <a href="/biblioteca/{{ archivo.id }}">
-                    <br><h2>{{ archivo.nombre }}</h2>
-                    <div class="img">
-                    <img src="/archivos/{{ archivo.portada }}">
-                    </div>
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+    <!-- Listados de Archivos-->
+    {%for tipo in tipos %}
+        <div class="lista-archivos">
+            <h2> {{tipo.1}}</h2>
+            <ul class="grid">
+                {% for archivo in archivos %}
+                    {% if archivo.tipo == tipo.0 %}
+                        <li class="grid-item">
+                            <a href="/biblioteca/{{ archivo.id }}">
+                                <br><h2>{{ archivo.nombre }}</h2>
+                                <div class="img">
+                                    <img src="/archivos/{{ archivo.portada }}">
+                                </div>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
 </div>
 
     <script type="text/javascript">

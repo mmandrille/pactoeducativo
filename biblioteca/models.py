@@ -9,12 +9,13 @@ from pactoeducativo.settings import MEDIA_URL
 from django.utils import timezone
 
 # Create your models here.
-class Archivo(models.Model):
-    tipos_de_archivos = (
+TIPOS_DE_ARCHIVOS = (
         (1, 'Documentos Pacto 2018'),
         (2, 'Antecedente'),
     )
-    tipo = models.IntegerField(choices=tipos_de_archivos, default=1)
+
+class Archivo(models.Model):
+    tipo = models.IntegerField(choices=TIPOS_DE_ARCHIVOS, default=1)
     nombre = models.CharField('Titulo', max_length=200)
     descripcion = models.TextField()
     portada = models.FileField(upload_to='portadas/', default='/archivos/defaults/noimage.gif')
