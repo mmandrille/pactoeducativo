@@ -12,7 +12,7 @@
         <div class="encuesta-respuesta">
             {% for preg in encuesta.preguntas.all %}
                 <h3>{{ preg.pregunta }}</h3>
-                <ul<>
+                <ul>
                 {% for opcion in preg.opciones.all %}
                     <li>{{opcion.opcion}}: {% retornar_valor resultados preg.orden opcion.orden %}</li>
                 {% endfor %}

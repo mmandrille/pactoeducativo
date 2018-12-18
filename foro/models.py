@@ -25,9 +25,9 @@ class Thread(models.Model):
 		return ("/foro/ver/" + str(self.id))
 
 class Post(models.Model):
-	thread= models.ForeignKey(Thread, on_delete=models.CASCADE)
-	autor= models.ForeignKey(User, on_delete=models.CASCADE)
-	body= models.CharField(max_length=200)
-	fecha_creacion= models.DateField(default=datetime.date.today)
+	thread = models.ForeignKey(Thread, on_delete=models.CASCADE)
+	autor = models.ForeignKey(User, on_delete=models.CASCADE)
+	body = models.CharField(max_length=200)
+	fecha_creacion = models.DateField(default=datetime.date.today)
 	def __str__(self):
 		return self.autor.username + " comento: " + self.body + "| al contenido: " + self.thread.nombre + "| " + str(self.fecha_creacion) + ")"
